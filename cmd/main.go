@@ -9,3 +9,5 @@ import (
 func main() {
 	fmt.Println(color.GreenString("Hello, world!"))
 }
+
+// TODO: fix the linter
