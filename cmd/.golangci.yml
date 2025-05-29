@@ -17,7 +17,17 @@ linters:
     - goimports     # Проверка на порядок и использование импортов
     - goconst       # Предлагает выносить повторяющиеся строковые/числовые значения в `const`
 
+  exclusions:
+    generated: lax            # Игнорировать строго сгенерированные файлы
+    warn-unused: true
+    presets:
+      - comments
+      - std-error-handling
+      - common-false-positives
+      - legacy
+    paths:
+      - ".*_gen\\.go$"        # Дополнительно игнорировать файлы с таким суффиксом
+
 issues:
   max-issues-per-linter: 0  # Нет лимита по количеству ошибок от одного линтера
   max-same-issues: 0        # Нет лимита по количеству одинаковых ошибок
- 
