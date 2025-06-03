@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: chat-go
+      POSTGRES_USER: chat-go
+      POSTGRES_PASSWORD: chat-go
