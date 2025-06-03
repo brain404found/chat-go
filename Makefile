@@ -4,5 +4,11 @@ install-lint:
 lint:
 	golangci-lint run -v
 
+run-local:
+	docker compose -f ./docker-compose-local.yml up --build -d
+
+dowm: 
+	docker compose -f ./docker-compose-local.yml down
+	
 run:
 	@go run cmd/main.go
