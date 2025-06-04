@@ -1,3 +1,3 @@
-module github.com/olezhek28/microservices_course_boilerplate
+module chat-go
 
 go 1.23
