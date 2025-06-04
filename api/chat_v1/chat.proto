@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package chat_v1;
 
-option go_package = "chat-go/pkg;note_v1";
+option go_package = "chat-go/pkg;chat_v1";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";

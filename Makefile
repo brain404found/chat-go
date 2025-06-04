@@ -1,5 +1,5 @@
 PROTO_DIR=api
-PROTO_FILE=$(PROTO_DIR)/note_v1/note.proto
+PROTO_FILE=$(PROTO_DIR)/chat_v1/chat.proto
 GEN_OUT_DIR=pkg	
 SERVER_BIN=bin/server
 CLIENT_BIN=bin/client
