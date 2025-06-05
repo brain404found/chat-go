@@ -1,4 +1,4 @@
-package chatv1
+package service
 
 import (
 	chatpb "chat-go/pkg/chat_v1"
