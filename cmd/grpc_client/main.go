@@ -3,7 +3,6 @@ package main
 import (
 	chatpb "chat-go/pkg/chat_v1"
 	"context"
-	"fmt"
 	"io"
 	"log"
 	"sync"
@@ -34,7 +33,7 @@ func main() {
 		log.Fatalf("failed to create chat: %v", err)
 	}
 
-	log.Printf(fmt.Sprintf("%s: %s\n", color.GreenString("Chat created"), color.YellowString(chatID)))
+	log.Print(color.GreenString("Chat created") + ": " + color.YellowString(chatID) + "\n")
 
 	wg := sync.WaitGroup{}
 	wg.Add(2)
