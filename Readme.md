@@ -30,11 +30,11 @@ The project follows a client-server architecture using gRPC for communication:
 ├── cmd/                    # Application entry points
 │   ├── grpc_client/        # Chat client implementation
 │   └── grpc_server/        # Chat server implementation
-├── internal/              # Private application code
-│   └── service/           # Business logic implementation
-├── pkg/                   # Public library code
-│   └── chat_v1/           # Generated protobuf code
-└── Makefile              # Build and development commands
+├── internal/               # Private application code
+│   └── service/            # Business logic implementation
+├── pkg/                    # Public library code
+│   └── chat_v1/            # Generated protobuf code
+└── Makefile                # Build and development commands
 ```
 
 ## Getting Started
