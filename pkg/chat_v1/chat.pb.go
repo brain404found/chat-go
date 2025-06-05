@@ -83,27 +83,27 @@ func (x *Message) GetCreatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-type CreateChatRespons struct {
+type CreateChatResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CharId        string                 `protobuf:"bytes,1,opt,name=char_id,json=charId,proto3" json:"char_id,omitempty"`
+	ChatId        string                 `protobuf:"bytes,1,opt,name=chat_id,json=chatId,proto3" json:"chat_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateChatRespons) Reset() {
-	*x = CreateChatRespons{}
+func (x *CreateChatResponse) Reset() {
+	*x = CreateChatResponse{}
 	mi := &file_chat_v1_chat_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateChatRespons) String() string {
+func (x *CreateChatResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateChatRespons) ProtoMessage() {}
+func (*CreateChatResponse) ProtoMessage() {}
 
-func (x *CreateChatRespons) ProtoReflect() protoreflect.Message {
+func (x *CreateChatResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_chat_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -115,14 +115,14 @@ func (x *CreateChatRespons) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateChatRespons.ProtoReflect.Descriptor instead.
-func (*CreateChatRespons) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateChatResponse.ProtoReflect.Descriptor instead.
+func (*CreateChatResponse) Descriptor() ([]byte, []int) {
 	return file_chat_v1_chat_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateChatRespons) GetCharId() string {
+func (x *CreateChatResponse) GetChatId() string {
 	if x != nil {
-		return x.CharId
+		return x.ChatId
 	}
 	return ""
 }
@@ -240,18 +240,18 @@ const file_chat_v1_chat_proto_rawDesc = "" +
 	"\x04from\x18\x01 \x01(\tR\x04from\x12\x12\n" +
 	"\x04text\x18\x02 \x01(\tR\x04text\x129\n" +
 	"\n" +
-	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\",\n" +
-	"\x11CreateChatRespons\x12\x17\n" +
-	"\achar_id\x18\x01 \x01(\tR\x06charId\"I\n" +
+	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"-\n" +
+	"\x12CreateChatResponse\x12\x17\n" +
+	"\achat_id\x18\x01 \x01(\tR\x06chatId\"I\n" +
 	"\x12ConnectChatRequest\x12\x17\n" +
 	"\achat_id\x18\x01 \x01(\tR\x06chatId\x12\x1a\n" +
 	"\busername\x18\x02 \x01(\tR\busername\"Y\n" +
 	"\x12SendMessageRequest\x12\x17\n" +
 	"\achat_id\x18\x01 \x01(\tR\x06chatId\x12*\n" +
-	"\amessage\x18\x02 \x01(\v2\x10.chat_v1.MessageR\amessage2\xce\x01\n" +
-	"\x06ChatV1\x12@\n" +
+	"\amessage\x18\x02 \x01(\v2\x10.chat_v1.MessageR\amessage2\xcf\x01\n" +
+	"\x06ChatV1\x12A\n" +
 	"\n" +
-	"CreateChat\x12\x16.google.protobuf.Empty\x1a\x1a.chat_v1.CreateChatRespons\x12>\n" +
+	"CreateChat\x12\x16.google.protobuf.Empty\x1a\x1b.chat_v1.CreateChatResponse\x12>\n" +
 	"\vConnectChat\x12\x1b.chat_v1.ConnectChatRequest\x1a\x10.chat_v1.Message0\x01\x12B\n" +
 	"\vSendMessage\x12\x1b.chat_v1.SendMessageRequest\x1a\x16.google.protobuf.EmptyB\x15Z\x13chat-go/pkg;chat_v1b\x06proto3"
 
@@ -270,7 +270,7 @@ func file_chat_v1_chat_proto_rawDescGZIP() []byte {
 var file_chat_v1_chat_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_chat_v1_chat_proto_goTypes = []any{
 	(*Message)(nil),               // 0: chat_v1.Message
-	(*CreateChatRespons)(nil),     // 1: chat_v1.CreateChatRespons
+	(*CreateChatResponse)(nil),    // 1: chat_v1.CreateChatResponse
 	(*ConnectChatRequest)(nil),    // 2: chat_v1.ConnectChatRequest
 	(*SendMessageRequest)(nil),    // 3: chat_v1.SendMessageRequest
 	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
@@ -282,7 +282,7 @@ var file_chat_v1_chat_proto_depIdxs = []int32{
 	5, // 2: chat_v1.ChatV1.CreateChat:input_type -> google.protobuf.Empty
 	2, // 3: chat_v1.ChatV1.ConnectChat:input_type -> chat_v1.ConnectChatRequest
 	3, // 4: chat_v1.ChatV1.SendMessage:input_type -> chat_v1.SendMessageRequest
-	1, // 5: chat_v1.ChatV1.CreateChat:output_type -> chat_v1.CreateChatRespons
+	1, // 5: chat_v1.ChatV1.CreateChat:output_type -> chat_v1.CreateChatResponse
 	0, // 6: chat_v1.ChatV1.ConnectChat:output_type -> chat_v1.Message
 	5, // 7: chat_v1.ChatV1.SendMessage:output_type -> google.protobuf.Empty
 	5, // [5:8] is the sub-list for method output_type

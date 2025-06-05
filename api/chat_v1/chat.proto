@@ -8,7 +8,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
 service ChatV1 {
-    rpc CreateChat(google.protobuf.Empty) returns (CreateChatRespons);
+    rpc CreateChat(google.protobuf.Empty) returns (CreateChatResponse);
     rpc ConnectChat(ConnectChatRequest) returns (stream Message);
     rpc SendMessage(SendMessageRequest) returns (google.protobuf.Empty);
 }
@@ -19,8 +19,8 @@ message Message {
     google.protobuf.Timestamp created_at = 3;
 }
 
-message CreateChatRespons {
-    string char_id = 1;
+message CreateChatResponse {
+    string chat_id = 1;
 }
 
 message ConnectChatRequest {

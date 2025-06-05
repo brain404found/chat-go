@@ -29,7 +29,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChatV1Client interface {
-	CreateChat(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*CreateChatRespons, error)
+	CreateChat(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*CreateChatResponse, error)
 	ConnectChat(ctx context.Context, in *ConnectChatRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[Message], error)
 	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
@@ -42,9 +42,9 @@ func NewChatV1Client(cc grpc.ClientConnInterface) ChatV1Client {
 	return &chatV1Client{cc}
 }
 
-func (c *chatV1Client) CreateChat(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*CreateChatRespons, error) {
+func (c *chatV1Client) CreateChat(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*CreateChatResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(CreateChatRespons)
+	out := new(CreateChatResponse)
 	err := c.cc.Invoke(ctx, ChatV1_CreateChat_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -85,7 +85,7 @@ func (c *chatV1Client) SendMessage(ctx context.Context, in *SendMessageRequest, 
 // All implementations must embed UnimplementedChatV1Server
 // for forward compatibility.
 type ChatV1Server interface {
-	CreateChat(context.Context, *emptypb.Empty) (*CreateChatRespons, error)
+	CreateChat(context.Context, *emptypb.Empty) (*CreateChatResponse, error)
 	ConnectChat(*ConnectChatRequest, grpc.ServerStreamingServer[Message]) error
 	SendMessage(context.Context, *SendMessageRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedChatV1Server()
@@ -98,7 +98,7 @@ type ChatV1Server interface {
 // pointer dereference when methods are called.
 type UnimplementedChatV1Server struct{}
 
-func (UnimplementedChatV1Server) CreateChat(context.Context, *emptypb.Empty) (*CreateChatRespons, error) {
+func (UnimplementedChatV1Server) CreateChat(context.Context, *emptypb.Empty) (*CreateChatResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateChat not implemented")
 }
 func (UnimplementedChatV1Server) ConnectChat(*ConnectChatRequest, grpc.ServerStreamingServer[Message]) error {
