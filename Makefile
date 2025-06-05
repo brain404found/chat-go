@@ -29,10 +29,10 @@ build-client:
 build: build-server build-client
 
 run-server:
-	go run ./cmd/server
+	go run ./cmd/grpc_server
 
 run-client:
-	go run ./cmd/client
+	go run ./cmd/grpc_client
 
 install-lint:
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
